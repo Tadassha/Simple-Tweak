@@ -6,18 +6,15 @@
 # Start Simple Tweak
 
 # VM Settings 
-echo 100 > /proc/sys/vm/swappiness
+echo 90 > /proc/sys/vm/swappiness
 echo 25 > /proc/sys/vm/dirty_ratio
 echo 60 > /proc/sys/vm/overcommit_ratio
 echo 90 > /proc/sys/vm/vfs_cache_pressure
 echo 1 > /proc/sys/vm/swap_ratio_enable
 
-# Zram Settings
-echo 2621440000 > /sys/block/zram0/disksize
-
 # FS settings
-echo 1024 > /sys/class/block/mmcblk0/queue/read_ahead_kb
-echo noop > /sys/block/mmcblk0/queue/scheduler
+echo deadline > /sys/block/mmcblk0/queue/scheduler
+echo 512 > /sys/class/block/mmcblk0/queue/read_ahead_kb
 
 # Prop Tweak
 resetprop -n logd.statistics false
@@ -25,6 +22,13 @@ resetprop -n ro.logd.statistics false
 resetprop -n persist.logd.statistics false
 resetprop -n logd.kernel false
 resetprop -n logcat.live disable
+resetprop -n log.tag.ALOGD SILENT
+resetprop -n log.tag.ALOGV SILENT
+resetprop -n log.tag.ALOGW SILENT
+resetprop -n log.tag.ALOGE SILENT
+resetprop -n log.tag.ALOGI SILENT
+resetprop -n log.tag.ALOG SILENT
+resetprop -n log.tag.DEFAULT SILENT
 resetprop -n logcast.live disable
 resetprop -n live.logcat disable
 resetprop -n persist.sys.offlinelog.kernel 1
@@ -46,29 +50,29 @@ resetprop -n ro.surface_flinger.supports_background_blur 0
 resetprop -n ro.sf.blurs_are_expensive 0
 resetprop -n ro.config.small_battery true
 resetprop -n persist.service.lgospd.enable 0
+resetprop -n persist.logd.size 0
+resetprop -n persist.logd.size.stats 0
 resetprop -n persist.service.pcsync.enable 0
-resetprop -n ro.sys.fw.bg_apps_limit 4
 resetprop -n ro.vendor.qti.sys.fw.bg_apps_limit 4
 resetprop -n ro.vendor.qti.sys.fw.bservice_enable true
-resetprop -n ro.config.bg_apps_limit 4
 resetprop -n debug.sf.disable_client_composition_cache 1
 resetprop -n debug.renderengine.backend skiaglthreaded
 resetprop -n debug.hwui.skia_atrace_enabled false
 resetprop -n ro.surface_flinger.enable_frame_rate_override false
-# Aggressive Ram Killer (Prop)
-resetprop -n ro.config.dha_cached_max 8
-resetprop -n ro.config.dha_empty_max 15
-resetprop -n ro.config.dha_empty_init 8 
-resetprop -n ro.config.dha_lmk_scale 0.7
-resetprop -n ro.config.dha_th_rate 1.0
-resetprop -n ro.config.sdha_apps_bg_max 6
-resetprop -n ro.config.sdha_apps_bg_min 2
 resetprop -n ro.surface_flinger.has_wide_color_display false    
 resetprop -n ro.surface_flinger.use_color_management false
 resetprop -n ro.surface_flinger.vsync_event_phase_offset_ns 3000000
+# light RAM management (prop)
+resetprop -n ro.config.dha_cached_max 32
+resetprop -n ro.config.dha_empty_max 30
+resetprop -n ro.config.dha_empty_init 25
+resetprop -n ro.config.dha_lmk_scale 1.0
+resetprop -n ro.config.dha_th_rate 0.5
+resetprop -n ro.config.sdha_apps_bg_max 20
+resetprop -n ro.config.sdha_apps_bg_min 10
 
 # TCP
-echo 'reno' > "/proc/sys/net/ipv4/tcp_congestion_control"
+echo "cubic" > "/proc/sys/net/ipv4/tcp_congestion_control"
 
 # Kernel Tweak
 echo 1 > /proc/sys/kernel/sched_tunable_scaling
@@ -80,3 +84,5 @@ echo "0   0   0   0" > /proc/sys/kernel/printk
 echo 0 > /proc/sys/kernel/printk_delay
 echo 0 > /proc/sys/kernel/printk_ratelimit_burst
 echo 0 > /proc/sys/kernel/printk_ratelimit
+echo 0 > /proc/sys/kernel/dmesg_restrict
+

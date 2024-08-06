@@ -1,7 +1,7 @@
 id=simpletweak
 name=Simple Tweak
-version=0.2-alpha
-versionCode=2
+version=0.3-alpha
+versionCode=3
 author=@Tadassha
 description=[ALPHA] simple tweaker for your system 
-updateJson=
+updateJson=https://raw.githubusercontent.com/Tadassha/Simple-Tweak/main/update.json
