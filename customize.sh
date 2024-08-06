@@ -3,7 +3,7 @@ ui_print "
 
 * by @Tadassha
 
-* Alpha Version 0.2
+* Alpha Version 0.3
 
 * you can use tweaks from my magisk module in
 other magick module, but please indicate my 
@@ -27,7 +27,7 @@ ui_print "
 sleep 0.2
 ui_print "
 - Prop Tweak...
-- Aggressive Ram Killer (Prop)
+- light RAM management (prop)
 "
 sleep 0.2
 ui_print "
@@ -35,7 +35,7 @@ ui_print "
 "
 sleep 0.2
 ui_print "
-- Help Ram...
+- Reset Battery Statistics 
 "
 sleep 0.2
 ui_print "
@@ -43,5 +43,5 @@ ui_print "
 "
 sleep 0.2
 ui_print " 
-- simple tweaker installed
+- Simple Tweaker Installed
 "
