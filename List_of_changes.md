@@ -60,4 +60,6 @@ Version 0.6
 - Remove Optimization Entropy
 - Edited TCP, Prop Tweak 
 - Remove Internet Tweak
+- Edited Kernel Tweak
+- Remove Reset Battery Stats
 * * *
