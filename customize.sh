@@ -3,7 +3,7 @@ ui_print "
 
 * by @Tadassha
 
-* Alpha Version 0.4
+* Version 0.6
 
 * you can use tweaks from my magisk module in
 other magick module, but please indicate my 
@@ -13,8 +13,6 @@ you take tweaks from my magisk module
 sleep 2
 
 ui_print "
-- Hungry GMS...
-
 - Simple GMS...
 "
 sleep 0.2
@@ -29,7 +27,7 @@ sleep 0.2
 ui_print "
 - Prop Tweak...
 
-- light RAM management (prop)
+- light RAM management (prop)...
 "
 sleep 0.2
 ui_print "
@@ -37,15 +35,7 @@ ui_print "
 "
 sleep 0.2
 ui_print "
-- Reset Battery Statistics 
-"
-sleep 0.2
-ui_print "
-- Stop log...
-"
-sleep 0.2
-ui_print "
-- Internet Tweak...
+- Simple Miui Debloat...
 "
 sleep 0.2
 ui_print "
@@ -53,5 +43,5 @@ ui_print "
 "
 sleep 0.2
 ui_print " 
-- Simple Tweaker Installed
+- Simple Tweaker Installed✓
 "

@@ -45,3 +45,19 @@ Version 0.4-Alpha
 - Add Optimization Entropy
 - Edited TCP
 * * *
+
+* * *
+Version 0.5 Release Version!!!
+- Edited Prop Tweak
+- Edited Simple GMS
+- Add Simple Miui Debloat
+- Remove Stop Log
+* * *
+
+* * *
+Version 0.6
+- Remove Hungry GMS
+- Remove Optimization Entropy
+- Edited TCP, Prop Tweak 
+- Remove Internet Tweak
+* * *
